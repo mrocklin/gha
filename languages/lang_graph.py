@@ -54,7 +54,7 @@ def weight(a,b):
 
 def edge_exists(a,b):
     """ Whether or not an edge exists between langs a and b """
-    return interactions[a,b] > 10 and (ratio[a,b]>1 or ratio[b,a]>1)
+    return interactions[a,b] > 7 and (ratio[a,b]>1 or ratio[b,a]>1)
 
 def affine(i,v,I,o,O):
     """ Takes value v from range [i,I] to range [o,O]
