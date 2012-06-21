@@ -1,7 +1,8 @@
 Language Plot
 =============
 
-This directory holds code to produce a graph of languges common on github.com.
+This directory holds code to produce a [graph of languges common on
+github.com](http://people.cs.uchicago.edu/~mrocklin/images/github_languages.pdf).
 
 This code takes the 
 [timeline database](https://github.com/blog/1112-data-at-github) of
