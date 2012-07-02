@@ -133,3 +133,12 @@ def plot_points(points, names):
     xticks(visible=False)
     yticks(visible=False)
     show()
+
+def affine(i,v,I,o,O):
+    """ Takes value v from range [i,I] to range [o,O]
+    >>> affine(0, .5, 1, 0, 10)
+    5.0
+    >>> affine(0, .5, 1, 10, 20)
+    15.0
+    """
+    return (1.0*O-o)*(1.0*v-i)/(1.0*I-i) + 1.0*o
