@@ -3,7 +3,7 @@ CREATE TABLE Commit_Actions
     id Varchar[40] NOT NULL PRIMARY KEY,
     action Varchar[4] NOT NULL,
     path Varchar[256] NOT NULL
-)
+);
 
 CREATE TABLE Commit_log
 (
@@ -14,5 +14,5 @@ CREATE TABLE Commit_log
     subject      Varchar[80],
     timestamp    long,
     body         Varchar[256]
-)
+);
 
