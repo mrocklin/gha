@@ -18,6 +18,10 @@ def test_parse_commit():
             (('D','languages/README.md'),
              ('D','languages/data/language_connections')))
 
+    assert parse_commit("""d2961f6358dc4ebe1c3f31b72959322dca5693a4\n\nD       doc/logo/Final - SymPy 500x500 Logo  No Text.png""") ==\
+            ("d2961f6358dc4ebe1c3f31b72959322dca5693a4",
+            (("D", "doc/logo/Final - SymPy 500x500 Logo No Text.png"),))
+
 def test_whatchanged():
     stream = whatchanged()
     def valid(id, files):

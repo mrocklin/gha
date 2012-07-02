@@ -14,8 +14,15 @@ def parse_commit(s):
     lines = s.split('\n')
     id = lines[0].strip()
 
-    return id, tuple(tuple(line.strip().split())
-                            for line in lines[1:] if line.strip())
+    def parse_line(line):
+        words = line.strip().split()
+        id = words[0]
+        rest = words[1:]
+        if not isinstance(rest, str):
+            rest = ' '.join(rest)
+        return id, rest
+
+    return id, tuple(parse_line(line) for line in lines[1:] if line.strip())
 
 def whatchanged_sql_insert_statements():
     from sql import insert_statement
