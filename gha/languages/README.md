@@ -28,9 +28,9 @@ Experimentation in these aspects is encouraged.
 
 To Run
 ------
-The following code should produce a pdf file
+The following code should produce both dot pdf files
 
-    python go.py
+    python go.py data/language_connections lang.dot lang.pdf
 
 Author
 ------
