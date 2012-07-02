@@ -1,6 +1,6 @@
 CREATE TABLE Commit_actions
 (
-    id Varchar(40) NOT NULL PRIMARY KEY,
+    id Varchar(40) NOT NULL,
     action Varchar(4) NOT NULL,
     path Varchar(256) NOT NULL
 );
