@@ -26,6 +26,10 @@ git_status = "[ACDMRTUX][\d]{0,3}"
 
 file_changed_line = "(?P<status>%s)\s+(?P<path>%s)"%(git_status, path)
 
+indented_line = "^[ \t]+.*"
+
+commit_msg = "(%s\n)+"%indented_line
+
 def parse_logfile(file):
     s = file.read() # sorry
     prog = re.compile(header)

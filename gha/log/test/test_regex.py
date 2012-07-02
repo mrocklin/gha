@@ -89,3 +89,11 @@ def test_file_changed_line():
     assert prog.findall(commit_message) == [
             ('M', 'gha/repositories/README.md'),
             ('A', 'new')]
+
+def test_indented_line():
+    prog = re.compile(indented_line)
+    assert matches(prog, "    hello world")
+    assert not matches(prog, "hello world")
+
+def test_commit_message():
+    prog = re.compile(commit_message)
