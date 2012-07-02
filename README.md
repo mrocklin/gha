@@ -20,3 +20,8 @@ Projects
 
  * Languages - A simple graph about the static structure of the languages on
    github and which pairs are often known by users simultaneously. 
+
+ * Repositores - A larger graph about the static structure of the projects
+   hosted on github and which pairs are often forked by users simultaneously.
+   This graph is larger and requires more advanced visualization techniques.
+
