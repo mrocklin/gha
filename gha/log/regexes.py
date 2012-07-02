@@ -19,8 +19,12 @@ date = "Date:\s*"+'\s*'.join((day_of_week, month, day_number, time, year, timezo
 
 header = '\s*'.join((commit, author, email, date))
 
+file_regex = "[\w.]+"
+path = "[\w.\/]+"
 
+git_status = "[ACDMRTUX][\d]{0,3}"
 
+file_changed_line = "(?P<status>%s)\s+(?P<path>%s)"%(git_status, path)
 
 def parse_logfile(file):
     s = file.read() # sorry

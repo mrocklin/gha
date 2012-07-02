@@ -7,6 +7,11 @@ Author: Matthew Rocklin <mrocklin@gmail.com>
 Date:   Mon Jul 2 09:14:15 2012 -0500
 
     added repositories note to README
+
+    and did some other things
+
+M       gha/repositories/README.md
+A       new-README.md
 """
 
 def matches(prog, s):
@@ -61,3 +66,26 @@ def test_date():
                     'second': '15',
                     'timezone': '-0500',
                     'year': '2012'}
+
+def test_file():
+    prog = re.compile(file_regex)
+    assert matches(prog, "hello.txt")
+    assert matches(prog, "hello_world.c")
+
+def test_path():
+    prog = re.compile(path)
+    assert matches(prog, "gha/log/regexes.py")
+    assert matches(prog, "regexes.py")
+
+def test_git_status():
+    prog = re.compile(git_status)
+    assert matches(prog, "A")
+    assert matches(prog, "M")
+
+def test_file_changed_line():
+    prog = re.compile(file_changed_line)
+    assert matches(prog, "A       gha/log/test/test_regex.py")
+    assert matches(prog, "M       README.md")
+    assert prog.findall(commit_message) == [
+            ('M', 'gha/repositories/README.md'),
+            ('A', 'new')]
